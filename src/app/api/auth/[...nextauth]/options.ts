@@ -13,6 +13,12 @@ export const options: NextAuthOptions = {
 	pages: {
 		signIn: "/auth/signIn",
 	},
+	callbacks: {
+		async jwt({ token, user, account, profile }) {
+			console.log({ user, account, profile });
+			return token;
+		},
+	},
 };
 
 // CredentialsProvider({
